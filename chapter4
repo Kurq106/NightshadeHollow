@@ -1,0 +1,24 @@
+import maingame
+import globalvars
+
+def main():
+    print("\n--- Chapter 4: The Fire Shrine ---")
+    print("The shrine blazes with intense heat, challenging your courage.")
+
+    # Interaction with Fire Familiar
+    print("A flickering flame appears as the Fire Familiar offers to light the way.")
+    light_path = input("Do you let the Fire Familiar guide you through the darkness? (yes/no): ").lower()
+
+    if light_path == "yes":
+        print("The Fire Familiar reveals a path leading to the Core of Fire.")
+        globalvars.items_list.append("Fire Crystal")
+        print("You now have these items: ", globalvars.items_list)
+        globalvars.chapter4_success = True
+    else:
+        print("You hesitate, and the flames grow too strong to proceed.")
+        globalvars.chapter4_success = False
+
+    maingame.print_status(globalvars.items_list)
+
+if __name__ == '__main__':
+    main()
