@@ -1,0 +1,24 @@
+import maingame
+import globalvars
+
+def main():
+    print("\n--- Chapter 3: The Air Shrine ---")
+    print("You arrive at the Air Shrine, where wind whispers guide your steps.")
+
+    # Interaction with Air Familiar
+    print("A soft glow appears as an Air Familiar greets you, guiding you to hidden paths.")
+    hidden_path_found = input("Do you follow the Air Familiar's guidance? (yes/no): ").lower()
+
+    if hidden_path_found == "yes":
+        print("You discover a hidden treasure containing a magical wind crystal!")
+        globalvars.items_list.append("Wind Crystal")
+        print("You now have these items: ", globalvars.items_list)
+        globalvars.chapter3_success = True
+    else:
+        print("You miss the hidden path and leave empty-handed.")
+        globalvars.chapter3_success = False
+
+    maingame.print_status(globalvars.items_list)
+
+if __name__ == '__main__':
+    main()
