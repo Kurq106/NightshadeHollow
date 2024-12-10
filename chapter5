@@ -1,0 +1,24 @@
+import maingame
+import globalvars
+
+def main():
+    print("\n--- Chapter 5: The Grand Ritual ---")
+    print("You gather all the crystals and return to Nightshade Hollow.")
+
+    # Final Check for Items
+    required_items = ["Earth Crystal", "Water Crystal", "Wind Crystal", "Fire Crystal"]
+    missing_items = [item for item in required_items if item not in globalvars.items_list]
+
+    if not missing_items:
+        print("The Grand Ritual begins as you place each crystal at its altar.")
+        print("The balance of Nightshade Hollow is restored. The villagers celebrate your bravery!")
+        globalvars.chapter5_success = True
+    else:
+        print("You are missing the following items:", missing_items)
+        print("The Grand Ritual cannot be completed. Nightshade Hollow remains in disarray.")
+        globalvars.chapter5_success = False
+
+    maingame.print_status(globalvars.items_list)
+
+if __name__ == '__main__':
+    main()
