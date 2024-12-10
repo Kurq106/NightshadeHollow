@@ -24,7 +24,7 @@ globalvars.py: Contains shared variables.
 
 maingame.py: Includes shared functions used across chapters.
 
-chapter1.py, chapter2.py: Contains chapter-specific game logic.
+chapter1.py, chapter2.py, chapter3.py, chapter4.py, chapter.py: Contains chapter-specific game logic.
 
 main.py: The entry point for the game.
 
